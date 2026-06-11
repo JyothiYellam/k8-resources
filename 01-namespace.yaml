@@ -6,8 +6,31 @@ metadata:
     project: roboshop
     environment: dev
     purpose: poc
+
+
+
+
     
-
-
-
-
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tools-pod
+  labels:
+    app: tools
+  annotations:
+    owner: sre-team
+spec:
+  containers:
+     - name: busybox
+       image: busybox
+       command:
+         - sleep
+         - "1800"
+       env:
+        - name: TOOL
+          value: kubectl
+        - name: ENV
+          value: dev
+       ports:
+         - containerport: 80
+       

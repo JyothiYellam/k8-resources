@@ -10,7 +10,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchlabels:
+    matchLabels:
       project: roboshop
       purpose: rs-demo
       tier: frontend
@@ -26,7 +26,7 @@ spec:
       containers:
         - name: nginx
           image: nginx
-          
+
 
           
              
